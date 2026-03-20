@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   devIndicators: false,
+
+  
+  output: 'export',
+  trailingSlash: true,
+
   images: {
     remotePatterns: [
       {
@@ -10,6 +15,7 @@ const nextConfig: NextConfig = {
         hostname: "images.pexels.com",
       },
     ],
+    unoptimized: true,
   },
 };
 
