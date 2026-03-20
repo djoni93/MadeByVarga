@@ -1,0 +1,6 @@
+# Project Standards
+- Tech Stack: Next.js 15+ (App Router), Tailwind CSS, Framer Motion, Lucide React.
+- Language: Bilingual (English & Serbian) using next-intl or similar i18n library.
+- Styling: Modern, minimalist, high-end furniture brand aesthetic.
+- Components: Functional components with TypeScript. Use clean, modular architecture.
+- Animations: Smooth, scroll-triggered, luxury feel.

@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-oak: #8B6914;
+  --color-oak-light: #a5842e;
+  --color-oak-dark: #6b4f0e;
+  --color-walnut: #5C4033;
+  --color-walnut-light: #7a5c4d;
+  --color-walnut-dark: #3e2a22;
+  --color-birch: #d4c4a8;
+  --color-birch-light: #e8dcc8;
+  --color-birch-dark: #b8a888;
+  --color-sawdust: #f2ece0;
+  --color-sawdust-light: #faf7f0;
+  --color-sawdust-dark: #ddd4c2;
+  --color-bark: #2c2218;
+  --color-bark-light: #44382c;
+  --color-bark-medium: #3a2e22;
+  --color-heartwood: #a0522d;
+  --color-heartwood-light: #c47a50;
+  --color-resin: #c9a84c;
+  --color-resin-dark: #a68a3a;
+  --color-grain: #7a6852;
+  --color-warmwhite: #faf6ee;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * {
+    cursor: none !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-sawdust-light);
+    color: var(--color-bark);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-oak);
+    color: var(--color-sawdust-light);
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    font-variation-settings: "SOFT" 50, "WONK" 1;
+  }
+
+  .wood-grain {
+    position: relative;
+  }
+
+  .wood-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(
+        2deg,
+        transparent,
+        transparent 22px,
+        rgba(92, 64, 51, 0.12) 22px,
+        rgba(92, 64, 51, 0.12) 23px,
+        transparent 23px,
+        transparent 47px,
+        rgba(92, 64, 51, 0.08) 47px,
+        rgba(92, 64, 51, 0.08) 48px
+      ),
+      repeating-linear-gradient(
+        178deg,
+        transparent,
+        transparent 60px,
+        rgba(92, 64, 51, 0.04) 60px,
+        rgba(92, 64, 51, 0.04) 61px
+      );
+  }
+
+  .wood-ring {
+    position: relative;
+  }
+
+  .wood-ring::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(92, 64, 51, 0.06);
+    box-shadow:
+      0 0 0 30px transparent,
+      0 0 0 31px rgba(92, 64, 51, 0.04),
+      0 0 0 65px transparent,
+      0 0 0 66px rgba(92, 64, 51, 0.03),
+      0 0 0 104px transparent,
+      0 0 0 105px rgba(92, 64, 51, 0.02),
+      0 0 0 148px transparent,
+      0 0 0 149px rgba(92, 64, 51, 0.015);
+    pointer-events: none;
+  }
+
+  .sawdust-texture {
+    position: relative;
+  }
+
+  .sawdust-texture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    mix-blend-mode: multiply;
+  }
+}
